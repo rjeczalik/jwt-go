@@ -55,7 +55,7 @@ func (p *Parser) ParseWithClaims(tokenString string, claims Claims, keyFunc Keyf
 	if c, ok := token.Claims.(MapClaims); ok {
 		err = dec.Decode(&c)
 	} else {
-		err = dec.Decode(&claims)
+		err = dec.Decode(claims)
 	}
 	// Handle decode error
 	if err != nil {
